@@ -1,0 +1,14 @@
+# Install a CUDA-compatible PyTorch build separately: https://pytorch.org/
+numpy
+pandas
+Pillow
+tqdm
+tensorboard
+mamba-ssm
+pytest
+shapely
+matplotlib
+
+# Required only when rebuilding ADC_Data from the released raw sequences.
+opencv-python-headless
+cantools

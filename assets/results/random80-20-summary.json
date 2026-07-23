@@ -1,0 +1,259 @@
+{
+  "run_name": "RAVEN_rawADC_random80-20__2026-07-22_13-58-48-125406",
+  "epochs": 200,
+  "final_train_loss": 14.972517931611224,
+  "final_test_loss": 608.4079674409419,
+  "selected_checkpoint_epoch": 140,
+  "train_full_evaluation": {
+    "mAP": 0.9888980126594407,
+    "mAR": 0.9971153867790501,
+    "F1": 0.9929896995224087,
+    "RE": 0.07181122749485322,
+    "AE": 0.11040585031268109,
+    "confidence_thresholds": [
+      {
+        "confidence": 0.1,
+        "precision": 0.9507585177816463,
+        "recall": 0.9975212002609263,
+        "range_error": 0.07182626626966016,
+        "angle_error": 0.11039553955927497,
+        "tp": 7646,
+        "fp": 396,
+        "fn": 19
+      },
+      {
+        "confidence": 0.2,
+        "precision": 0.9798769546270187,
+        "recall": 0.9973907371167645,
+        "range_error": 0.0718201766003817,
+        "angle_error": 0.1104029511134162,
+        "tp": 7645,
+        "fp": 157,
+        "fn": 20
+      },
+      {
+        "confidence": 0.3,
+        "precision": 0.9899002978117312,
+        "recall": 0.9973907371167645,
+        "range_error": 0.0718201766003817,
+        "angle_error": 0.1104029511134162,
+        "tp": 7645,
+        "fp": 78,
+        "fn": 20
+      },
+      {
+        "confidence": 0.4,
+        "precision": 0.9932441210861375,
+        "recall": 0.9973907371167645,
+        "range_error": 0.0718201766003817,
+        "angle_error": 0.1104029511134162,
+        "tp": 7645,
+        "fp": 52,
+        "fn": 20
+      },
+      {
+        "confidence": 0.5,
+        "precision": 0.9955723401484569,
+        "recall": 0.9973907371167645,
+        "range_error": 0.0718201766003817,
+        "angle_error": 0.1104029511134162,
+        "tp": 7645,
+        "fp": 34,
+        "fn": 20
+      },
+      {
+        "confidence": 0.6,
+        "precision": 0.9972606313592486,
+        "recall": 0.9973907371167645,
+        "range_error": 0.0718201766003817,
+        "angle_error": 0.1104029511134162,
+        "tp": 7645,
+        "fp": 21,
+        "fn": 20
+      },
+      {
+        "confidence": 0.7,
+        "precision": 0.9975208768267223,
+        "recall": 0.9973907371167645,
+        "range_error": 0.0718201766003817,
+        "angle_error": 0.1104029511134162,
+        "tp": 7645,
+        "fp": 19,
+        "fn": 20
+      },
+      {
+        "confidence": 0.8,
+        "precision": 0.9979109544326935,
+        "recall": 0.997129810828441,
+        "range_error": 0.07181147177624547,
+        "angle_error": 0.11041875340580161,
+        "tp": 7643,
+        "fp": 16,
+        "fn": 22
+      },
+      {
+        "confidence": 0.9,
+        "precision": 0.998037419861311,
+        "recall": 0.9950430472214975,
+        "range_error": 0.07174224980548317,
+        "angle_error": 0.11042065316855611,
+        "tp": 7628,
+        "fp": 15,
+        "fn": 38
+      }
+    ],
+    "protocol": {
+      "source": "RADIal-main/FFTRadNet/utils/metrics.py::GetFullMetrics",
+      "confidence_thresholds": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "nms_iou": 0.05,
+      "matching_iou": 0.5,
+      "range_m": [
+        5,
+        100
+      ],
+      "allows_multiple_predictions_to_match_the_same_ground_truth": true
+    },
+    "mIoU": 0.9161931812790759,
+    "sample_count": 6601,
+    "split": "train",
+    "test_aliases_val": true,
+    "checkpoint": "best_balanced.pth",
+    "checkpoint_epoch": 140
+  },
+  "test_full_evaluation": {
+    "mAP": 0.41677869903435183,
+    "mAR": 0.3005313005313005,
+    "F1": 0.34923546174006226,
+    "RE": 0.1817157968945756,
+    "AE": 0.4116568634637352,
+    "confidence_thresholds": [
+      {
+        "confidence": 0.1,
+        "precision": 0.32123045890065555,
+        "recall": 0.3310810810810811,
+        "range_error": 0.1836934677285714,
+        "angle_error": 0.41131297011203255,
+        "tp": 637,
+        "fp": 1346,
+        "fn": 1287
+      },
+      {
+        "confidence": 0.2,
+        "precision": 0.35841470419299254,
+        "recall": 0.32432432432432434,
+        "range_error": 0.18327611149885717,
+        "angle_error": 0.4104954447501745,
+        "tp": 624,
+        "fp": 1117,
+        "fn": 1300
+      },
+      {
+        "confidence": 0.3,
+        "precision": 0.38095238095238093,
+        "recall": 0.316008316008316,
+        "range_error": 0.18218756864141478,
+        "angle_error": 0.41148701467012105,
+        "tp": 608,
+        "fp": 988,
+        "fn": 1316
+      },
+      {
+        "confidence": 0.4,
+        "precision": 0.3989290495314592,
+        "recall": 0.3097713097713098,
+        "range_error": 0.18210158967131737,
+        "angle_error": 0.4127324811564196,
+        "tp": 596,
+        "fp": 898,
+        "fn": 1328
+      },
+      {
+        "confidence": 0.5,
+        "precision": 0.41589119541875447,
+        "recall": 0.301975051975052,
+        "range_error": 0.18214729335960544,
+        "angle_error": 0.4119874507753041,
+        "tp": 581,
+        "fp": 816,
+        "fn": 1343
+      },
+      {
+        "confidence": 0.6,
+        "precision": 0.4318181818181818,
+        "recall": 0.29625779625779625,
+        "range_error": 0.18195400138696036,
+        "angle_error": 0.41084157040244657,
+        "tp": 570,
+        "fp": 750,
+        "fn": 1354
+      },
+      {
+        "confidence": 0.7,
+        "precision": 0.4540983606557377,
+        "recall": 0.28794178794178793,
+        "range_error": 0.1802374604914593,
+        "angle_error": 0.4117500360261662,
+        "tp": 554,
+        "fp": 666,
+        "fn": 1370
+      },
+      {
+        "confidence": 0.8,
+        "precision": 0.4768270944741533,
+        "recall": 0.27806652806652804,
+        "range_error": 0.1807482368478151,
+        "angle_error": 0.41135863544784973,
+        "tp": 535,
+        "fp": 587,
+        "fn": 1389
+      },
+      {
+        "confidence": 0.9,
+        "precision": 0.512846865364851,
+        "recall": 0.25935550935550933,
+        "range_error": 0.17909644242517933,
+        "angle_error": 0.41294616783310273,
+        "tp": 499,
+        "fp": 474,
+        "fn": 1425
+      }
+    ],
+    "protocol": {
+      "source": "RADIal-main/FFTRadNet/utils/metrics.py::GetFullMetrics",
+      "confidence_thresholds": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "nms_iou": 0.05,
+      "matching_iou": 0.5,
+      "range_m": [
+        5,
+        100
+      ],
+      "allows_multiple_predictions_to_match_the_same_ground_truth": true
+    },
+    "mIoU": 0.7567782821880092,
+    "sample_count": 1651,
+    "split": "val",
+    "test_aliases_val": true,
+    "checkpoint": "best_balanced.pth",
+    "checkpoint_epoch": 140
+  }
+}

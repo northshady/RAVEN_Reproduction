@@ -1,0 +1,113 @@
+{
+  "experiment_name": "RAVEN_rawADC_random80-20",
+  "seed": 3,
+  "paths": {
+    "dataset_root": "data/RADIal",
+    "output_dir": "outputs"
+  },
+  "preprocessing": {
+    "dc_removal": false,
+    "amplitude_transform": "none"
+  },
+  "model": {
+    "architecture_version": "paper_equations_v1",
+    "num_chirps": 256,
+    "num_samples": 512,
+    "num_rx": 16,
+    "num_tx": 12,
+    "mixer_dim": 64,
+    "mixer_heads": 8,
+    "mixer_ffn_expansion": 4,
+    "mixer_embedding_std": 1.0,
+    "mixer_projection_bias": false,
+    "chirp_dim": 234,
+    "ssm_state_dim": 16,
+    "ssm_conv_kernel": 4,
+    "ssm_expansion": 2,
+    "fast_time_layers": 1,
+    "slow_time_layers": 1,
+    "backbone_projection_bias": false,
+    "bev_grid": [32, 56],
+    "det_temporal_bins": 32,
+    "seg_temporal_bins": 16,
+    "decoder_channels": 16,
+    "decoder_conv_bias": false,
+    "spatial_projection_bias": true,
+    "regression_channels": 2,
+    "detection_prior_probability": 0.01,
+    "detection_output_size": [128, 224],
+    "segmentation_output_size": [256, 224],
+    "input_layout": "chirp_sample_channel",
+    "input_transform": "none",
+    "ssm_backend": "mamba"
+  },
+  "dataset": {
+    "include_difficult": true,
+    "geometry": {
+      "ranges": [512, 896, 1],
+      "resolution": [0.201171875, 0.2],
+      "size": 3
+    },
+    "statistics": {
+      "reg_mean": [0.4048094369863972, 0.3997392847799934],
+      "reg_std": [0.6968599580482511, 0.6942950877813826]
+    }
+  },
+  "split": {
+    "mode": "random",
+    "ratios": [0.8, 0.2]
+  },
+  "loader": {
+    "train": {
+      "batch_size": 4,
+      "num_workers": 4,
+      "prefetch_factor": 2,
+      "persistent_workers": true,
+      "pin_memory": true
+    },
+    "val": {
+      "batch_size": 4,
+      "num_workers": 2,
+      "prefetch_factor": 1,
+      "persistent_workers": true,
+      "pin_memory": true
+    },
+    "test": {
+      "batch_size": 4,
+      "num_workers": 2,
+      "prefetch_factor": 1,
+      "persistent_workers": true,
+      "pin_memory": true
+    }
+  },
+  "loss": {
+    "classification": "focal",
+    "regression": "smooth_l1",
+    "segmentation": "bce_with_logits",
+    "weights": [2, 100, 100]
+  },
+  "optimizer": {
+    "name": "adam",
+    "lr": 0.0001
+  },
+  "scheduler": {
+    "type": "constant"
+  },
+  "training": {
+    "epochs": 200,
+    "amp": false,
+    "cudnn_benchmark": true,
+    "gradient_clip": null,
+    "metrics_start_epoch": 0,
+    "save_every": 1
+  },
+  "evaluation": {
+    "confidence_threshold": 0.2,
+    "iou_threshold": 0.2,
+    "range_min": 5.0,
+    "range_max": 100.0,
+    "nms_threshold": 0.05,
+    "segmentation_threshold": 0.5,
+    "segmentation_rows": 124
+  }
+}
