@@ -1,4 +1,4 @@
-# Unofficial Reproduction of CVPR'26 Paper RAVEN on RADIal Dataset
+# Unofficial Reproduction of CVPR'26 Paper RAVEN
 
 This repository packages a standalone training and evaluation pipeline for
 the raw-ADC radar network introduced in
