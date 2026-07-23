@@ -15,25 +15,6 @@ detections and free-space segmentation.
 > transparent and to invite interested researchers to inspect it, identify
 > discrepancies, and reproduce the results together.
 
-## Reproduction status
-
-This repository is not affiliated with or endorsed by the paper authors. It
-must not be described as the authors' implementation. The paper reports
-approximately **1.511M parameters and 1.023G operations** for RAVEN, but some
-decoder dimensions, implementation details, and profiling conventions are not
-disclosed. The executable reconstruction in this repository has:
-
-- **1,427,460 trainable parameters**;
-- **1.125 GMAC** under the explicit analytical convention implemented in
-  `raven_repro/models/raven_profile.py`;
-- the paper-described 16 independent RX fast-time SSMs, antenna mixer,
-  chirp-wise SSM, 32 x 56 BEV projection, and separate detection and
-  segmentation decoding paths.
-
-Run `python profile_model.py` to reproduce these numbers. Do not present the
-current parameter/MAC values as an exact official implementation; report both
-the paper values and the values measured from this code.
-
 
 
 ## Latest random-split reproduction result
@@ -115,6 +96,22 @@ python tools/generate_training_report.py \
 ```
 
 ## Current reproduced architecture and end-to-end data flow
+
+The paper reports
+approximately **1.511M parameters and 1.023G operations** for RAVEN, but some
+decoder dimensions, implementation details, and profiling conventions are not
+disclosed. The executable reconstruction in this repository has:
+
+- **1,427,460 trainable parameters**;
+- **1.125 GMAC** under the explicit analytical convention implemented in
+  `raven_repro/models/raven_profile.py`;
+- the paper-described 16 independent RX fast-time SSMs, antenna mixer,
+  chirp-wise SSM, 32 x 56 BEV projection, and separate detection and
+  segmentation decoding paths.
+
+Run `python profile_model.py` to reproduce these numbers. Do not present the
+current parameter/MAC values as an exact official implementation; report both
+the paper values and the values measured from this code.
 
 The following description documents the model that is actually implemented
 in this repository. Dimensions are taken from
