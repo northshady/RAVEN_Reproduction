@@ -1,4 +1,4 @@
-# RAVEN on RADIal: standalone research reproduction
+# RAVEN on RADIal: unofficial reproduction
 
 This repository packages a standalone training and evaluation pipeline for
 the raw-ADC radar network introduced in
