@@ -38,7 +38,12 @@ checkpoint maximized `(fixed-threshold F1 + mIoU) / 2` on the held-out split.
 The curves below show all 200 epochs. At epoch 200, train loss is `14.97` while
 held-out loss is `608.41`, showing a severe generalization gap.
 
-![Training and held-out loss](assets/results/random80-20-loss.png)
+
+<p align="center">
+  <img src="assets/results/random80-20-loss.png" width="48%">
+  <img src="assets/results/random80-20-map.png" width="40%">
+</p>
+
 
 Detection was recomputed on both partitions with the same full-evaluation
 logic as the released `RADIal-main/FFTRadNet/utils/metrics.py::GetFullMetrics`:
@@ -49,7 +54,6 @@ precision values across the nine confidence thresholds; it is not the area
 under an interpolated precision-recall curve. The released matching behavior
 also permits multiple predictions to match the same ground-truth box.
 
-![Train and held-out mAP](assets/results/random80-20-map.png)
 
 | Metric | Train, reproduced | Held-out test, reproduced | RAVEN paper, full frame | Held-out gap vs. paper |
 |---|---:|---:|---:|---:|
@@ -96,6 +100,8 @@ python tools/generate_training_report.py \
 ```
 
 ## Current reproduced architecture and end-to-end data flow
+
+> The reproduction was implemented by following the methodology described in the paper, using the open-source FFTRadNet repository as a reference, with implementation assistance from ChatGPT 5.6 Sol Ultra.
 
 The paper reports
 approximately **1.511M parameters and 1.023G operations** for RAVEN, but some
