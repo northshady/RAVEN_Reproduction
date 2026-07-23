@@ -2,19 +2,12 @@
 
 This repository packages a standalone training and evaluation pipeline for
 the raw-ADC radar network introduced in
-[RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](https://openaccess.thecvf.com/content/CVPR2026/html/Sen_RAVEN_Radar_Adaptive_Vision_Encoders_for_Efficient_Chirp-wise_Object_Detection_CVPR_2026_paper.html).
+[RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation (CVPR'26)](https://openaccess.thecvf.com/content/CVPR2026/html/Sen_RAVEN_Radar_Adaptive_Vision_Encoders_for_Efficient_Chirp-wise_Object_Detection_CVPR_2026_paper.html).
 It uses label-aligned RADIal raw ADC frames and jointly predicts vehicle
 detections and free-space segmentation.
 
-The project was separated from a larger multi-model experimental workspace so
-that RAVEN experiments can be reproduced, audited, and reported in an
-independent GitHub repository. It contains the model, raw-sequence conversion,
-dataset splits, training, checkpointing, evaluation, and confidence/IoU
-threshold sweeps. It does **not** redistribute RADIal data or pretrained
-weights.
-
 > **Important:** this is an independent, unofficial reproduction. The paper
-> authors have not open-sourced the complete RAVEN implementation, so parts of
+> authors **have not open-sourced** the RAVEN implementation, so parts of
 > the architecture and training pipeline had to be reconstructed from the
 > paper and the available research material. I have not been able to reproduce
 > the performance claimed in the paper with this implementation. The purpose
@@ -41,14 +34,16 @@ Run `python profile_model.py` to reproduce these numbers. Do not present the
 current parameter/MAC values as an exact official implementation; report both
 the paper values and the values measured from this code.
 
+
+
+## Latest random-split reproduction result
+
 > **Split-protocol note:** RAVEN and SSMRadNet use a random split on RADIal,
 > whereas most other baselines reported on RADIal use sequence-disjoint splits
 > to prevent highly similar frames from the same driving sequence leaking
 > across training and evaluation; despite this leakage risk, this reproduction
 > retains the random split to remain consistent with the RAVEN paper's stated
 > experimental protocol.
-
-## Latest random-split reproduction result
 
 The following result comes from the completed 200-epoch run
 `RAVEN_rawADC_random80-20__2026-07-22_13-58-48-125406`. It uses a deterministic
