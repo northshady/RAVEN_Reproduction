@@ -19,8 +19,8 @@ detections and free-space segmentation.
 
 ## Latest random-split reproduction result
 
-> **Split-protocol note:** RAVEN and SSMRadNet use a random split on RADIal,
-> whereas most other baselines reported on RADIal use sequence-disjoint splits
+> **Split-protocol note:** RAVEN and SSMRadNet use a **random split** on RADIal,
+> whereas most other baselines reported on RADIal use **sequence-disjoint splits**
 > to prevent highly similar frames from the same driving sequence leaking
 > across training and evaluation; despite this leakage risk, this reproduction
 > retains the random split to remain consistent with the RAVEN paper's stated
